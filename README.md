@@ -21,7 +21,7 @@ To install the above mentioned packages, run the command :
 
 1. Now copy the prism.py file to FreeCAD's Macro folder (default location is ~/.FreeCAD/Macros):   
 
-    ````cp prism.py ~/.FreeCAD/Macros/```
+    ````cp prism.py ~/.FreeCAD/Macros/````
 
 1. Launch FreeCAD using command:   
 

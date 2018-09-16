@@ -125,7 +125,7 @@ class MainWindow(QtGui.QMainWindow):
 	height=float(height_disp)
 	App.activeDocument().addObject('PartDesign::Body','Body')
 	App.activeDocument().Body.newObject('Sketcher::SketchObject','Sketch')
-	App.activeDocument().Sketch.Support = (App.activeDocument().XY_Plane, [''])
+	App.activeDocument().Sketch.Support = (App.activeDocument().XZ_Plane, [''])
 	App.activeDocument().Sketch.MapMode = 'FlatFace'
 	App.ActiveDocument.recompute()
 	x=float((a*a+c*c-b*b)/(2*a))

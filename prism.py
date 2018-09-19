@@ -25,7 +25,7 @@ class MainWindow(QtGui.QMainWindow):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(439, 393)
+        MainWindow.resize(456, 483)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtGui.QVBoxLayout(self.centralwidget)
@@ -58,15 +58,23 @@ class MainWindow(QtGui.QMainWindow):
         self.getPrism = QtGui.QPushButton(self.centralwidget)
         self.getPrism.setObjectName("getPrism")
         self.verticalLayout.addWidget(self.getPrism)
+        self.area_tri_lbl = QtGui.QLabel(self.centralwidget)
+        self.area_tri_lbl.setObjectName("area_tri_lbl")
+        self.verticalLayout.addWidget(self.area_tri_lbl)
+        self.area_tri_disp = QtGui.QLineEdit(self.centralwidget)
+        self.area_tri_disp.setText("10.8253175473")
+        self.area_tri_disp.setReadOnly(True)
+        self.area_tri_disp.setObjectName("area_tri_disp")
+        self.verticalLayout.addWidget(self.area_tri_disp)
         self.area_lbl = QtGui.QLabel(self.centralwidget)
         self.area_lbl.setObjectName("area_lbl")
         self.verticalLayout.addWidget(self.area_lbl)
         self.area_disp = QtGui.QLineEdit(self.centralwidget)
-        self.area_disp.setText("171.650635095")
         self.area_disp.setReadOnly(True)
         self.area_disp.setObjectName("area_disp")
         self.verticalLayout.addWidget(self.area_disp)
         self.volume_lbl = QtGui.QLabel(self.centralwidget)
+        self.area_disp.setText("171.650635095")
         self.volume_lbl.setObjectName("volume_lbl")
         self.verticalLayout.addWidget(self.volume_lbl)
         self.volume_disp = QtGui.QLineEdit(self.centralwidget)
@@ -93,8 +101,9 @@ class MainWindow(QtGui.QMainWindow):
         self.sides_lbl.setText(_translate("MainWindow", "Sides:"))
         self.height_lbl.setText(_translate("MainWindow", "Height:"))
         self.getPrism.setText(_translate("MainWindow", "Make Prism"))
-        self.area_lbl.setText(_translate("MainWindow", "Area:"))
-        self.volume_lbl.setText(_translate("MainWindow", "Volume:"))
+        self.area_tri_lbl.setText(_translate("MainWindow", "Area of one Triangle:"))
+        self.area_lbl.setText(_translate("MainWindow", "Surface Area of Prism:"))
+        self.volume_lbl.setText(_translate("MainWindow", "Volume of Prism:"))
 
 
 ## the gui backend functions	
@@ -109,6 +118,7 @@ class MainWindow(QtGui.QMainWindow):
 	height=float(height_disp)
 	s=(a+b+c)/2
 	ar_tri=math.sqrt(s*(s-a)*(s-b)*(s-c))
+	self.area_tri_disp.setText(str(ar_tri))
 	area=2*ar_tri+(a+b+c)*height
 	self.area_disp.setText(str(area))
 	volume=ar_tri*height

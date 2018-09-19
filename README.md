@@ -6,9 +6,9 @@ This is a simple form to create Triangular Prism in FreeCAD. It also calculates 
 * PyQt4
 * git
 
-To install the above mentioned packages, run the command :   
+To install the above mentioned packages, run the command :
 
-    ````sudo apt-get install freecad python3-pyqt4 git````
+   ````sudo apt-get install freecad python3-pyqt4 git````
 
 ## How to use
 1. Open the terminal and download the Source-code in your FreeCAD's Macro folder (default location is ~/.FreeCAD/Macros) with the command :   
